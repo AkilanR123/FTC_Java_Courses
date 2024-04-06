@@ -1,0 +1,41 @@
+package org.firstinspires.ftc.teamcode;
+
+import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
+
+public class AkilanRavikumarRobotConfig {
+
+    public DcMotor frontLeftW;
+    public DcMotor frontRightW;
+    public DcMotor backLeftW;
+    public DcMotor backRightW;
+
+
+    HardwareMap ourRobotConfig;
+    public AkilanRavikumarRobotConfig(){
+    }
+    public void init(HardwareMap aRobotConfig){
+    ourRobotConfig = aRobotConfig;
+    frontLeftW  = ourRobotConfig.get(DcMotor.class, "FrontLeftWheel");
+    frontRightW  = ourRobotConfig.get(DcMotor.class, "FrontRightWheel");
+    backLeftW  = ourRobotConfig.get(DcMotor.class, "BackLeftWheel");
+    backRightW  = ourRobotConfig.get(DcMotor.class, "BackRightWheel");
+ 
+    
+    frontLeftW.setDirection(DcMotorSimple.Direction.FORWARD);
+    backLeftW.setDirection(DcMotorSimple.Direction.REVERSE);
+    frontRightW.setDirection(DcMotorSimple.Direction.REVERSE);
+    backRightW.setDirection(DcMotorSimple.Direction.FORWARD);
+    
+    frontLeftW.setDirection(DcMotorSimple.Direction.REVERSE);
+    backLeftW.setDirection(DcMotorSimple.Direction.REVERSE);
+    frontRightW.setDirection(DcMotorSimple.Direction.FORWARD);
+    backRightW.setDirection(DcMotorSimple.Direction.FORWARD);
+    
+    frontLeftW.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+    frontRightW.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+    backLeftW.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+    backRightW.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+
+}}

@@ -1,0 +1,95 @@
+package org.firstinspires.ftc.teamcode;
+
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+
+@TeleOp
+
+public class AkilanRavikumarLesson5 extends LinearOpMode  {
+    AkilanRavikumarRobotConfig robotConfig = new AkilanRavikumarRobotConfig();
+    public void stopDriving(){
+        robotConfig.frontLeftW.setPower(0);
+        robotConfig.frontRightW.setPower(0);
+        robotConfig.backLeftW.setPower(0);
+        robotConfig.backRightW.setPower(0);
+        sleep(1000);
+    }
+    public void moveForward(int forward){
+        robotConfig.frontLeftW.setPower(0.1);
+        robotConfig.frontRightW.setPower(0.1);
+        robotConfig.backLeftW.setPower(0.1);
+        robotConfig.backRightW.setPower(0.1);
+        sleep(forward);
+        stopDriving();
+    }
+    
+    public void moveBackwards(int backward){
+        robotConfig.frontLeftW.setPower(-0.1);
+        robotConfig.frontRightW.setPower(-0.1);
+        robotConfig.backLeftW.setPower(-0.1);
+        robotConfig.backRightW.setPower(-0.1);
+        sleep(backward);
+        stopDriving();
+    }
+    
+    public void strafeLeftMecanumWheels(){
+        robotConfig.frontLeftW.setPower(-0.2);
+        robotConfig.frontRightW.setPower(0.2);
+        robotConfig.backLeftW.setPower(0.2);
+        robotConfig.backRightW.setPower(-0.2);
+        sleep(800);
+        stopDriving();
+    }
+    
+    public void strafeRightMecanumWheels(){
+        robotConfig.frontLeftW.setPower(0.2);
+        robotConfig.frontRightW.setPower(-0.2);
+        robotConfig.backLeftW.setPower(-0.2);
+        robotConfig.backRightW.setPower(0.2);
+        sleep(800);
+        stopDriving();
+    }
+    public void turnRight(int right){
+        robotConfig.frontLeftW.setPower(0.2);
+        robotConfig.frontRightW.setPower(-0.2);
+        robotConfig.backLeftW.setPower(0.2);
+        robotConfig.backRightW.setPower(-0.2);
+        sleep(right);
+        stopDriving();
+    }
+    public void turnLeft(int left){
+        robotConfig.frontLeftW.setPower(-0.2);
+        robotConfig.frontRightW.setPower(0.2);
+        robotConfig.backLeftW.setPower(-0.2);
+        robotConfig.backRightW.setPower(0.2);
+        sleep(left);
+        stopDriving();
+    }
+    
+    // todo: write your code here4
+    
+    public void runOpMode() {
+        robotConfig.init(hardwareMap);
+        waitForStart();
+        turnRight(1400);
+        /*
+        moveForward(1500);
+        turnLeft(1300);
+        moveForward(3000);
+        turnRight(1300);
+        moveForward(1500);
+        turnRight(1300);
+        moveForward(1500);
+        turnRight(1300);
+        moveForward(3000);
+        turnLeft(1300);
+        moveForward(1500);
+        turnLeft(2600);
+        */
+
+        while (opModeIsActive()){
+        }
+    }
+    
+    
+}
